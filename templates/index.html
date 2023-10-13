@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <title>Your Skin Disease Identification</title>
+</head>
+ <!-- Header -->
+ <header>
+        
+    <nav>
+        
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#what-we-offer">What We Offer</a></li>
+            <li><a href="#UploadImg">Upload Image</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        
+    </nav>
+    <div class="logo">
+        <img src="static/img/logo.jpeg" alt="Logo">
+    </div>
+</header>
+
+<!-- Home Page -->
+<section id="home">
+    <div class="container">
+        <h1>Welcome to Your Skin Disease Identification</h1>
+        <p>Identifying skin diseases through machine learning.</p>
+        <a href="#UploadImg" class="cta-button">Get Started</a>
+    </div>
+</section>
+
+
+
+<!-- What We Offer Section -->
+<section id="what-we-offer">
+<div class="container2">
+    <h2 class="head">What We Offer</h2>
+
+    <!-- Container for Flexbox Layout -->
+    <div class="offer-container">
+        <!-- Skin Disease Identification -->
+        <div class="offer-item">
+            <h3>Skin Disease Identification</h3>
+            <p>Our advanced machine learning model is capable of accurately identifying a wide range of skin diseases, including but not limited to:</p>
+            <ul>
+                <li>Actinic Keratosis</li>
+                <li>Basal Cell Carcinoma and other Malignant Lesions</li>
+                <li>Atopic Dermatitis</li>
+                <!-- <li>Melanoma</li> -->
+                <li>And many more...</li>
+            </ul>
+            <p>With our system, you can upload an image of the affected skin area, and our model will provide a quick and reliable diagnosis.</p>
+        </div>
+
+        <!-- How It Works -->
+        <div class="offer-item">
+            <h3>How It Works</h3>
+            <p>Using our skin disease identification system is easy and efficient:</p>
+            <ol>
+                <li>Click the "Upload Image" button in the previous section.</li>
+                <li>Select an image of the affected skin area from your device.</li>
+                <li>Our model will analyze the image and provide a diagnosis within seconds.</li>
+                <li>You'll receive a detailed report that includes the detected condition and recommended actions.</li>
+            </ol>
+            <p>Our system uses state-of-the-art machine learning algorithms trained on a vast dataset of skin images to ensure accurate results.</p>
+        </div>
+         <!-- Steps here -->
+        
+
+        <!-- Benefits -->
+        <div class="offer-item">
+            <h3>Benefits</h3>
+        <p>Choosing our skin disease identification solution offers several advantages:</p>
+        <ul>
+            <li>Early detection of skin conditions, which can lead to more effective treatment.</li>
+            <li>Convenient and accessible diagnosis from the comfort of your home.</li>
+            <li>Reduced wait times for medical appointments.</li>
+            <li>Privacy and confidentiality of your health information.</li>
+        </ul>
+        <p>Our goal is to make skin disease diagnosis fast, accurate, and accessible to everyone.</p>
+        </div>
+
+
+        <div class="offer-item">
+            <h3>Privacy and Security</h3>
+            <p>We take your privacy and security seriously. Here's how we ensure your data is protected:</p>
+            <ul>
+                <li>Data Encryption: All data transmissions are encrypted to prevent unauthorized access.</li>
+                <li>Secure Servers: Our servers are equipped with the latest security measures to safeguard your information.</li>
+                <li>Data Deletion: We automatically delete uploaded images and related data after analysis to protect your privacy.</li>
+            </ul>
+            <p>Your information is handled responsibly and in compliance with data protection regulations.</p>
+        </div>
+    
+        <!-- User Support -->
+        <div class="offer-item">
+            <h3>User Support</h3>
+            <p>We're here to assist you whenever you need help or have questions:</p>
+            <ul>
+                <li>Contact Us: Feel free to reach out via email or our contact form for assistance.</li>
+                <li>FAQs: Check our frequently asked questions section for quick answers to common queries.</li>
+            </ul>
+            <p>Your satisfaction is important to us, and we strive to provide excellent support.</p>
+        </div>
+    </div>
+    </div>
+</div>
+</section>
+
+
+<!-- Image Upload Section -->
+<section id="UploadImg">
+<div class="container3">
+    <h2>Upload Skin Image</h2>
+    <p>Upload an image of the skin condition for analysis.</p>
+
+    <!-- Image Upload Form -->
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="skinImage" id="skinImage" accept="image/*" required>
+        <button class="Predict-button" type="submit">
+            Predict Disease
+        </button>
+    </form>
+</div>
+
+</section>
+
+
+
+<!-- Contact Us Section -->
+<section id="contact">
+<div class="container4">
+    <h2>Contact Us</h2>
+    <p>Have a question or need assistance? Reach out to us using the form below.</p>
+
+    <!-- Contact Form -->
+    <form id="contact-form" action="/submit" method="POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-button">Submit</button>
+        {% if submitSucess %}
+        <div class="alert alert-success" role="alert">
+            Msg Sent!
+          </div>
+        <p class = "sucess">  </p>
+        {% endif %}
+
+        {% if submitUnsucess %}
+        <div class="alert alert-danger" role="alert">
+            Error!!! Msg not sent!!
+          </div>
+        {% endif %}
+    </form>
+</div>
+</section>
+
+<footer>
+<div class="container5">
+    <div class="footer-content">
+        <div class="social-media">
+            <a href="https://github.com/GhufranBarcha" target="_blank" rel="noopener noreferrer">
+                <img src="static\img\icons8-github-188.png" alt="GitHub">
+            </a>
+            <a href="www.linkedin.com/in/ghufranbarcha" target="_blank" rel="noopener noreferrer">
+                <img src="static\img\icons8-twitter-144.png" alt="Twitter">
+            </a>
+            <!-- Add more social media links and icons as needed -->
+
+            <a href="https://github.com/GhufranBarcha" target="_blank" rel="noopener noreferrer">
+                <img src="static\img\icons8-linkedin-144.png" alt="Linkedn">
+            </a>
+        </div>
+        <p>&copy; 2023 Your Skin Disease Identification</p>
+    </div>
+</div>
+</footer>
+
+
+   
+</body>
+</html>

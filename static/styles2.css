@@ -1,0 +1,87 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #081f4f;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Predicted Disease Styles */
+/* Styles for the card container */
+.predicted {
+    background-color: #081f4f;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+/* Styles for the image with border */
+.image-border {
+    border: 6px solid #fffcfc;
+    border-radius: 5px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+/* Styles for the disease heading */
+.predicted h2 {
+    font-size: 1.9rem;
+    color: red; /* Set the color to red */
+    margin-bottom: 10px;
+}
+
+/* Styles for the other headings */
+.predicted h1 {
+    font-size: 1.7rem;
+    color: #4bb603;
+    margin-top: 20px;
+    font-weight:bolder;
+}
+
+/* Styles for the paragraphs */
+.predicted p {
+    font-size: 1.5rem;
+    color: #fffcfc;
+    margin-top: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+/* Disclaimer Styles */
+.disclaimer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #f00909;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .predicted h2 {
+        font-size: 20px;
+    }
+
+    .predicted h3 {
+        font-size: 16px;
+    }
+
+    .predicted p {
+        font-size: 14px;
+    }
+}

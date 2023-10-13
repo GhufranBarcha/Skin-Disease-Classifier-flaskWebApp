@@ -1,0 +1,79 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicted</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles2.css')}}">
+</head>
+<body>
+    <div class="predicted">
+        {% if predicted %}
+        <h2>The Skin Disease is: Acne and Rosacea</h2>
+        {% endif %}
+    
+        {% if image %}
+        <img src="data:image/jpeg;base64,{{ image }}" width="300">
+        {% endif %}
+        
+        {% if predicted %}
+        <h3>Symptoms:</h3>
+        <p>
+            Acne and Rosacea may have symptoms such as redness, visible blood vessels, and the appearance of acne-like bumps.
+            Additionally, individuals may experience flushing or blushing easily, and in more severe cases, eye symptoms.
+        </p>
+        
+        <h3>Prescription:</h3>
+        <p>
+            Treatment for Acne and Rosacea often includes topical creams, antibiotics, and lifestyle changes to manage symptoms.
+            It is important to consult a dermatologist for a personalized treatment plan.
+        </p>
+        {% endif %}
+    </div>
+    
+    <div class="disclaimer">
+        <p>This is an experimental product. For accurate diagnosis and treatment, please consult a qualified dermatologist or healthcare professional.</p>
+    </div>
+</body>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicted</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles2.css')}}">
+</head>
+<body>
+    <div class="predicted">
+        <!-- {% if predicted %} -->
+        <h2>The Skin Disease is: {{ predicted }}</h2>
+        <!-- {% endif %} -->
+    
+        {% if image %}
+        <img src="data:image/jpeg;base64,{{ image }}" width="500">
+        {% endif %}
+        
+        {% if symptoms %}
+        <h1>Symptoms:</h1>
+        <p>{{ symptoms }}</p>
+
+        {% endif %}
+    
+        {% if precautions %}
+        <h1>Precautions:</h1>
+        <p>{{ precautions }}</p>
+         {% endif %}
+    </div>
+    
+    <div class="disclaimer">
+        <p>This is an experimental product. For accurate diagnosis and treatment, please consult a qualified dermatologist or healthcare professional.!!</p>
+    </div>
+</body>
+</html>
